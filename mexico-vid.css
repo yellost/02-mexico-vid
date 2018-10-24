@@ -11,7 +11,14 @@ img {
     box-align: center;
     transform: translateX(-50%) translatey(50%);
 }
-div {
+video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.gradient {
     display: block;
     background-image: linear-gradient(to bottom right, rgba(17, 0, 255, 0.3), rgba(255, 102, 0, 0.3));
     min-width: 100%;
@@ -20,10 +27,92 @@ div {
     bottom: 0;
     right: 0;
 }
-video {
-    min-width: 100%;
-    min-height: 100%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+.btn {
+    display: block;
+    margin:20px 20px 0 0;
+    position:fixed;
+    right:0;
+    width:50px;
+    height:50px;
+    border:2px solid #fff;
+    background-color: rgba(255,255,255,0);
+    border-radius: 6px;
+    transition: .25s all ease-in-out;
+    transition-property: 
+}
+nav:hover .btn {
+    border:2px solid rgb(59, 253, 0);
+}
+.btn_content {
+    display: block;
+    margin:20px 20px 0 0;
+    position:fixed;
+    right:0;
+    width:51px;
+    height:51px;
+}
+.line_top {
+    display: block;
+    width:30px;
+    height:3px;
+    position: absolute;
+    top: 30%;
+    left:10px;
+    background-color: white;
+    border-radius: 2px;
+    transition: .25s all ease-in-out;
+}
+nav:hover .line_top{
+    background-color: rgb(59, 253, 0);
+    /* transform:  rotate(45deg) scale(1.5); top:50%; */
+    animation:anim_line_top 1s;
+    animation-fill-mode: forwards;
+}
+.line_mid {
+    display: block;
+    width:30px;
+    height:3px;
+    position: absolute;
+    top: 50%;
+    left:10px;
+    background-color: white;
+    border-radius: 2px;
+    transition: .25s all ease-in-out;
+}
+nav:hover .line_mid{
+    background-color: rgb(59, 253, 0);
+    /* transform: scalex(0); left:-15px; */
+    animation:anim_line_mid 1s;
+    animation-fill-mode: forwards;
+}
+.line_bot {
+    display: block;
+    width:30px;
+    height:3px;
+    position: absolute;
+    top: 70%;
+    left:10px;
+    background-color: white;
+    border-radius: 2px;
+    transition: .25s all ease-in-out;
+}
+nav:hover .line_bot{
+    background-color: rgb(59, 253, 0);
+    /* transform:  rotate(-45deg) scale(1.5); top:50%; */
+    animation:anim_line_bot 1s;
+    animation-fill-mode: forwards;
+}
+
+/* animations */
+@keyframes anim_line_top {
+    50%{transform: rotate(0) scale(1); top:50%;}
+    100%{transform:  rotate(45deg) scale(1.5); top:50%;}
+}
+@keyframes anim_line_mid {
+    50%{transform: scalex(0); left:-15px;}
+    100%{transform: scalex(0); left:-15px;}
+}
+@keyframes anim_line_bot {
+    50%{transform: rotate(0) scale(1); top:50%;}
+    100%{transform:  rotate(-45deg) scale(1.5); top:50%;}
 }
